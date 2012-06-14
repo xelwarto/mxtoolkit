@@ -27,6 +27,9 @@ location manually. This is an example of how to apply a the module manually:
 * Note: the modulepath option refers to the directory where the mxToolKit puppet module is installed
 not the module directory.
 
+    --modulepath="/path/to/module" # GOOD
+    --modulepath="/path/to/module/mxtoolkit" # BAD
+
 ### Puppet Master Install
 The mxToolKit puppet module is to be installed in the configured modules directory on the puppet master
 server. The default modules directory location is:
