@@ -24,7 +24,7 @@ location manually. This is an example of how to apply a the module manually:
 
     puppet apply --modulepath="/path/to/module" -e 'include mxtoolkit::secure'
 
-* Note: the modulepath option refers to the directory where the mxToolKit puppet module is installed
+Note: the modulepath option refers to the directory where the mxToolKit puppet module is installed
 not the module directory.  
 
     puppet apply --modulepath="/path/to/module" GOOD
