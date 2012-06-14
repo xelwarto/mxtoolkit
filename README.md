@@ -25,11 +25,10 @@ location manually. This is an example of how to apply a the module manually:
     puppet apply --modulepath="/path/to/module" -e 'include mxtoolkit::secure'
 
 * Note: the modulepath option refers to the directory where the mxToolKit puppet module is installed
-not the module directory.
-
+not the module directory.  
 
     puppet apply --modulepath="/path/to/module" # GOOD
-    puppet apply --modulepath="/path/to/module/mxtoolkit" # BAD
+    `puppet apply --modulepath="/path/to/module/mxtoolkit" # BAD`
 
 ### Puppet Master Install
 The mxToolKit puppet module is to be installed in the configured modules directory on the puppet master
