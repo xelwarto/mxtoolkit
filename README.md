@@ -5,6 +5,12 @@ Puppet module for Linux configuration and security
 
 This puppet module is a collection of manifests used to manage and secure Linux operating systems. Included in this module are a number of classes used to apply a base security (hardening) level to a Linux operating system. Additionally, the module includes other classes for management of the operating system configuration.
 
+*Currently the mxToolKit puppet module only supports the following Linux distros: ubuntu, redhat, fedora, centos, debian*
+
+### Current Version
+v: 0.1 (Beta)
+*Version changelog listed below*
+
 Installation
 ------------
 The mxToolKit puppet module can be installed on a standalone system or on a puppet master server in a multiserver setup. Installation of the module is simple and requires only downloading the module and coping it to the correct folder.
@@ -33,10 +39,40 @@ The simplest way to install and manage the mxToolKit puppet module is to clone t
     cd /etc/puppet/modules
     git clone https://github.com/xelwarto/mxtoolkit.git
 
+Usage
+-----
+Sample examples are listed as part of the class documentation below.
+
 Classes
 -------
 
 ### mxtoolkit
+Description:
+* Primary class for the mxToolKit puppet module.
+* This class includes an inline subclass - 'mxtoolkit::secure'
+    * Subclass provides an easy method for applying a security base to a linux host.
+    * This subclass will only be applies for the following operating systems: ubuntu, debian, centos, fedora, redhat
+    * The 'mxtoolkit::secure' subclass includes the following classes: 'mxtoolkit::linux::dist', 'mxtoolkit::linux::secure'
+
+Subclasses:
+* mxtoolkit::secure - Class for applying base security subclasses
+* mxtoolkit::linux - Subclass for all linux system classes
+* mxtoolkit::puppet - Subclass for the installation and configuration of a puppet master server
+
+Parameters:
+
+Tested:
+
+Sample Usage:
+
+    include mxtoolkit::secure
+
+Changelog
+---------
+
+### Version: 0.1 (ver-0.1)
+* Beta version - Initial upload of source files from original module.
+* Preparation of source files for public use. The original module source contained private information which needed to be removed.
 
 License
 -------
