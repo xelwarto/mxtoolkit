@@ -1,0 +1,8 @@
+# Added by mxToolKit via Puppet
+
+driftfile /var/lib/ntp/ntp.drift
+<% hosts.each do |host| -%>
+server <%= host %>
+<% end -%>
+restrict 127.0.0.1
+restrict ::1
