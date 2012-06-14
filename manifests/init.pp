@@ -1,7 +1,12 @@
 /* 
+####################
+# mxToolKit - Puppet module for Linux configuration and security
+#
+####################
 Class: mxtoolkit
 
 Description:
+- 
 
 Subclasses:
 - mxtoolkit::linux - Subclass for all linux system classes
@@ -15,7 +20,7 @@ Tested:
 
 Sample Usage:
 
-inlucde mxtoolkit::secure
+include mxtoolkit::secure
 
 #######################################################################
 
