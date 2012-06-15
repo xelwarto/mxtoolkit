@@ -1,4 +1,4 @@
-# Class: mxtoolkit::linux::dist::host
+# Class: mxtoolkit::linux::tools::host
 #
 # The mxToolKit module is used to manage several aspects of Unix/Linux systems
 # This class applies HOSTS file changes
@@ -11,9 +11,7 @@
 #
 # Sample Usage:
 #
-class mxtoolkit::linux::dist::host($aliases="",$domain="",$ip="") {
-	info("Applying class mxtoolkit::linux::dist::host")
-
+class mxtoolkit::linux::tools::host($aliases="", $domain="", $ip="") {
 	if ($ip) {
 		$ip_addr = $ip
 	} else {

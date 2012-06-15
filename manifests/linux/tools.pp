@@ -2,23 +2,24 @@
 ####################
 # mxToolKit - Puppet module for Linux configuration and security
 ####################
-Class: mxtoolkit::linux::dist
+Class: mxtoolkit::linux::tools
 
 Class Version: 0.1
 
 Description:
-* Linux distro class used to manage aspects of specific Linux distros. This class will attempt to apply all Linux distro sunclasses. 
+* Linux utility classes
 
 Subclasses:
-* mxtoolkit::linux::dist::update
+* mxtoolkit::linux::tools::groups
+* mxtoolkit::linux::tools::host
+* mxtoolkit::linux::tools::ntp
+* mxtoolkit::linux::tools::snmp
 
 Parameters:
 
 Tested:
 
 Sample Usage:
-
-    include 'mxtoolkit::linux::dist'
 
 #######################################################################
 
@@ -39,6 +40,5 @@ limitations under the License.
 #######################################################################
 */
 
-class mxtoolkit::linux::dist {
-	include mxtoolkit::linux::dist::update
+class mxtoolkit::linux::tools {
 }
