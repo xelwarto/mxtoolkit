@@ -1,22 +1,22 @@
-/* 
+/*
 ####################
 # mxToolKit - Puppet module for Linux configuration and security
-#
-# Class version: 0.1
 ####################
 Class: mxtoolkit
+
+Class Version: 0.1
 
 Description:
 * Primary class for the mxToolKit puppet module.
 * This class includes an inline subclass - 'mxtoolkit::secure'
     * Subclass provides an easy method for applying a security base to a linux host.
     * This subclass will only be applies for the following operating systems: ubuntu, debian, centos, fedora, redhat
-    * The 'mxtoolkit::secure' subclass includes the following classes: 'mxtoolkit::linux::dist', 'mxtoolkit::linux::secure'
+    * The 'mxtoolkit::secure' subclass includes the following classes: 'mxtoolkit::linux::dist', 'mxtoolkit::linux::secure', 'include mxtoolkit::tools::host'
 
 Subclasses:
-* mxtoolkit::secure - Class for applying base security subclasses
-* mxtoolkit::linux - Subclass for all linux system classes
-* mxtoolkit::puppet - Subclass for the installation and configuration of a puppet master server
+* mxtoolkit::secure
+* mxtoolkit::linux
+* mxtoolkit::puppet
 
 Parameters:
 
@@ -53,6 +53,7 @@ class mxtoolkit::secure {
 		/(?i-mx:ubuntu|debian|centos|fedora|redhat)/: {
 			include mxtoolkit::linux::dist
 			include mxtoolkit::linux::secure
+			include mxtoolkit::tools::host
 		}
 	}
 }

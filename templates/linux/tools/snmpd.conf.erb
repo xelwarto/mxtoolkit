@@ -1,0 +1,15 @@
+# Added by mxToolKit via Puppet
+
+agentAddress   udp:161
+
+rocommunity    <%= rocommunity %>
+sysLocation    <%= location %>
+
+sysServices    72
+proc           mountd
+proc           ntalkd    4
+proc           sendmail 10 1
+disk           /     10000
+disk           /var  5%
+includeAllDisks  10%
+load           12 10 5

@@ -1,0 +1,16 @@
+# Added by mxToolKit via Puppet
+
+driftfile /var/lib/ntp/drift
+
+restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1 
+restrict -6 ::1
+
+<% hosts.each do |host| -%>
+server <%= host %>
+<% end -%>
+
+includefile /etc/ntp/crypto/pw
+
+keys /etc/ntp/keys
