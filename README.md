@@ -70,6 +70,43 @@ Sample Usage:
 
     include mxtoolkit::secure
 
+### mxtoolkit::linux
+
+Class Version: 0.1
+
+Description:
+* Linux provisioning classes used to manage the Linux operating system and distro.
+
+Subclasses:
+* mxtoolkit::linux::dist
+* mxtoolkit::linux::secure
+* mxtoolkit::linux::tools
+
+Parameters:
+
+Tested:
+
+Sample Usage:
+
+### mxtoolkit::linux::tools
+
+Class Version: 0.1
+
+Description:
+* Linux utility classes
+
+Subclasses:
+* mxtoolkit::linux::tools::groups
+* mxtoolkit::linux::tools::host
+* mxtoolkit::linux::tools::ntp
+* mxtoolkit::linux::tools::snmp
+
+Parameters:
+
+Tested:
+
+Sample Usage:
+
 ### mxtoolkit::linux::tools::groups
 
 Class Version: 0.1
