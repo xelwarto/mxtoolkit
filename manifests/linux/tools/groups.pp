@@ -17,6 +17,7 @@ Parameters:
 Tested:
 
 Sample Usage:
+
     class { 'mxtoolkit::linux::tools::groups':
          names => ['group1', 'group2']
     }

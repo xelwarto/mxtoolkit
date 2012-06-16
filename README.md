@@ -70,7 +70,7 @@ Sample Usage:
 
     include mxtoolkit::secure
 
-### Class: mxtoolkit::linux::tools::groups
+### mxtoolkit::linux::tools::groups
 
 Class Version: 0.1
 
@@ -85,11 +85,12 @@ Parameters:
 Tested:
 
 Sample Usage:
+
     class { 'mxtoolkit::linux::tools::groups':
          names => ['group1', 'group2']
     }
 
-### Class: mxtoolkit::linux::tools::host
+### mxtoolkit::linux::tools::host
 
 Class Version: 0.1
 
@@ -126,7 +127,7 @@ Sample Usage:
         aliases => ['host1.slysystems.com', 'host2.slysystems.com']
     }
 
-### Class: mxtoolkit::linux::tools::ntp
+### mxtoolkit::linux::tools::ntp
 
 Class Version: 0.1
 
@@ -153,8 +154,7 @@ Sample Usage:
         hosts => ['ntp1.slysystems.com', 'ntp2.slysystems.com']
     }
 
-### Class: mxtoolkit::linux::tools::snmp
-
+### mxtoolkit::linux::tools::snmp
 Class Version: 0.1
 
 Description:
@@ -166,12 +166,17 @@ Description:
 Subclasses:
 
 Parameters:
+* location - Specify the system location. Default is 'UNKNOWN'. (STRING)
+* rocommunity - Set the read only community string. Default is 'public'. (STRING)
 
 Tested:
 
 Sample Usage:
 
-    include mxtoolkit::linux::tools::snmp
+    class {  'mxtoolkit::linux::tools::snmp':
+        location => 'NYC Data Center',
+        rocommunity => 'public'
+    }
 
 
 Changelog

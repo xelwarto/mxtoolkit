@@ -22,7 +22,10 @@ Tested:
 
 Sample Usage:
 
-    include mxtoolkit::linux::tools::snmp
+    class {  'mxtoolkit::linux::tools::snmp':
+        location => 'NYC Data Center',
+        rocommunity => 'public'
+    }
 
 #######################################################################
 
