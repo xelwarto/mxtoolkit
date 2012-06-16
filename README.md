@@ -225,6 +225,7 @@ Changelog
 * Removed the mxtoolkit::adm classes
 * Moved classes mxtoolkit::linux::dist::host to mxtoolkit::linux::tools::host
 * Removed class mxtoolkit::linux::dist::upgrade
+* Updated the mxtoolkit::linux::tools:: class to include parameters for location and rocommunity. The usage for this class has been changed.
 
 License
 -------
