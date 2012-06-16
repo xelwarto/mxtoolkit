@@ -88,6 +88,50 @@ Tested:
 
 Sample Usage:
 
+### mxtoolkit::linux::dist
+
+Class Version: 0.1
+
+Description:
+* Linux distro class used to manage aspects of specific Linux distros. This class will attempt to apply all Linux distro sunclasses. 
+
+Subclasses:
+* mxtoolkit::linux::dist::update
+
+Parameters:
+
+Tested:
+
+Sample Usage:
+
+    include 'mxtoolkit::linux::dist'
+
+### mxtoolkit::linux::secure
+
+Class Version: 0.1
+
+Description:
+* Linux security class used to manage the security of a Linux operating system. The Linux security classes are used to apply a secure base (harden) to the linux operating system. This class will attempt to apply all Linux security subclasses.
+
+Subclasses:
+* mxtoolkit::linux::secure::groups
+* mxtoolkit::linux::secure::login
+* mxtoolkit::linux::secure::motd
+* mxtoolkit::linux::secure::network
+* mxtoolkit::linux::secure::selinux2
+* mxtoolkit::linux::secure::services
+* mxtoolkit::linux::secure::ssh
+* mxtoolkit::linux::secure::sudo
+* mxtoolkit::linux::secure::tcpwrapper
+
+Parameters:
+
+Tested:
+
+Sample Usage:
+
+    include 'mxtoolkit::linux::secure'
+
 ### mxtoolkit::linux::tools
 
 Class Version: 0.1
