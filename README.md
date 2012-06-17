@@ -3,6 +3,12 @@ mxToolKit
 
 Puppet module for Linux configuration and security
 
+* [Installation][#installation]
+* [Usage][#usage]
+* [Classes][#classes]
+* [Changelog][#changelog]
+* [License][#license]
+
 This puppet module is a collection of manifests used to manage and secure Linux operating systems. Included in this module are a number of classes used to apply a base security (hardening) level to a Linux operating system. Additionally, the module includes other classes for management of the operating system configuration.
 
 *Currently the mxToolKit puppet module only supports the following Linux distros: ubuntu, redhat, fedora, centos, debian*
