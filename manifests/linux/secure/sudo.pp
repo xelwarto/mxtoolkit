@@ -40,6 +40,10 @@ class mxtoolkit::linux::secure::sudo inherits mxtoolkit::linux::secure::params {
 	$type = $mxtoolkit::linux::secure::params::os_type
 
 	if ($::id == "root") {
+		if ( ! defined(Class['mxtoolkit::linux::secure::groups']) ) {
+			class { 'mxtoolkit::linux::secure::groups': }
+		}
+
 		package { 'sudo':
 			ensure => 'present'
 		}
@@ -53,7 +57,6 @@ class mxtoolkit::linux::secure::sudo inherits mxtoolkit::linux::secure::params {
 			backup => ".mxToolKit_$::datetime",
 			require => Package['sudo']
 		}
-	
 	} else {
 		err("Error: incorrect user id - must be root to apply")
 	}
