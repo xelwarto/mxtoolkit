@@ -106,6 +106,23 @@ Sample Usage:
 
     include 'mxtoolkit::linux::dist'
 
+### mxtoolkit::linux::dist::update
+
+Class Version: 0.1
+
+Description:
+* Linux distro class used to apply operating system updates. This class will attempt to update all packaes on the system.
+
+Subclasses:
+
+Parameters:
+
+Tested:
+
+Sample Usage:
+
+    include 'mxtoolkit::linux::dist::update'
+
 ### mxtoolkit::linux::secure
 
 Class Version: 0.1
