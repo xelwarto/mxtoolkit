@@ -3,11 +3,11 @@ mxToolKit
 
 Puppet module for Linux configuration and security
 
-* [Installation][#installation]
-* [Usage][#usage]
-* [Classes][#classes]
-* [Changelog][#changelog]
-* [License][#license]
+* [Installation][https://github.com/xelwarto/mxtoolkit#installation]
+* [Usage][https://github.com/xelwarto/mxtoolkit#usage]
+* [Classes][https://github.com/xelwarto/mxtoolkit#classes]
+* [Changelog][https://github.com/xelwarto/mxtoolkit#changelog]
+* [License][https://github.com/xelwarto/mxtoolkit#license]
 
 This puppet module is a collection of manifests used to manage and secure Linux operating systems. Included in this module are a number of classes used to apply a base security (hardening) level to a Linux operating system. Additionally, the module includes other classes for management of the operating system configuration.
 
