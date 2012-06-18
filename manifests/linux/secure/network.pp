@@ -8,6 +8,7 @@ Class Version: 0.1
 
 Description:
 * Linux security class
+    * Requires: 'mxtoolkit::linux::secure::params'
 
 Subclasses:
 

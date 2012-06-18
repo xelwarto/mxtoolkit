@@ -8,6 +8,7 @@ Class Version: 0.1
 
 Description:
 * Linux security class
+    * Requires: 'mxtoolkit::linux::secure::params'
 
 Subclasses:
 
@@ -38,13 +39,15 @@ limitations under the License.
 
 class mxtoolkit::linux::secure::ssh inherits mxtoolkit::linux::secure::params {
 	if ($::id == "root") {
+		if ( ! defined(Class['mxtoolkit::linux::secure::motd']) ) {
+			class { 'mxtoolkit::linux::secure::motd': }
+		}
+
 		# SSH variables
 		$package = $mxtoolkit::linux::secure::params::ssh_package
 		$service = $mxtoolkit::linux::secure::params::ssh_service
 		$service_en = $mxtoolkit::linux::secure::params::ssh_service_en
 		$type = $mxtoolkit::linux::secure::params::os_type
-
-		include mxtoolkit::linux::secure::motd
 
 		# Ensure SSH is installed on the system
 		package { $package:

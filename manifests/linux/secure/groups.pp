@@ -7,7 +7,9 @@ Class: mxtoolkit::linux::secure::groups
 Class Version: 0.1
 
 Description:
-* Linux security class
+* Linux security class used to ensure the security groups exists on the system. The security groups are required by other security classes.
+    * The security groups are defined in: 'mxtoolkit::linux::secure::params::secure_groups'
+    * Requires: 'mxtoolkit::linux::secure::params'
 
 Subclasses:
 
@@ -16,6 +18,8 @@ Parameters:
 Tested:
 
 Sample Usage:
+
+    include 'mxtoolkit::linux::secure::groups'
 
 #######################################################################
 
@@ -37,8 +41,6 @@ limitations under the License.
 */
 
 class mxtoolkit::linux::secure::groups inherits mxtoolkit::linux::secure::params {
-	info("Applying class mxtoolkit::linux::secure::groups")
-
 	if ($::id == "root") {
 		$groups = $mxtoolkit::linux::secure::params::secure_groups
 

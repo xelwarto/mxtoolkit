@@ -7,7 +7,11 @@ Class: mxtoolkit::linux::secure::motd
 Class Version: 0.1
 
 Description:
-* Linux security class
+* Linux security class used to configure a security message for the message of the day. The MOTD is used by the SSH configuration to display the security message when ever a user attempts to access the system.
+    * Files Updated: '/etc/secure.motd', '/var/run/motd' (ubuntu,debian), '/etc/update-motd.d' (ubuntu,debian)
+    * A backup file (".mxToolKit_$::datetime") will be created when the content changes.
+    * Content Files: 'files/linux/secure/secure.motd'
+    * Requires: 'mxtoolkit::linux::secure::params'
 
 Subclasses:
 
@@ -37,15 +41,13 @@ limitations under the License.
 */
 
 class mxtoolkit::linux::secure::motd inherits mxtoolkit::linux::secure::params {
-	info("Applying class mxtoolkit::linux::secure::motd")
-
 	if ($::id == "root") {
 		file {  "/etc/secure.motd":
 			ensure => present,
 			owner => root,
 			group => root,
 			mode => 444,
-			source => "puppet:///modules/mxtoolkit/secure.motd",
+			source => "puppet:///modules/mxtoolkit/linux/secure/secure.motd",
 			backup => ".mxToolKit_$::datetime"
 		}
 

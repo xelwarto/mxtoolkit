@@ -7,7 +7,11 @@ Class: mxtoolkit::linux::secure::login
 Class Version: 0.1
 
 Description:
-* Linux security class
+* Linux security class used to secure the system login configuration. This class ensures enhanced password security is configured.
+    * Updates: '/etc/login.defs', '/etc/libuser.conf' (centos, fedora, redhat), '/etc/pam.d/system-auth-ac' (centos, fedora, redhat)
+    * Content Files: 'files/linux/secure/login.defs.debian', 'files/linux/secure/login.defs.redhat', 'files/linux/secure/libuser.conf.redhat', 'files/linux/secure/system-auth.redhat'
+    * A backup file (".mxToolKit_$::datetime") will be created when the content changes.
+    * Requires: 'mxtoolkit::linux::secure::params'
 
 Subclasses:
 
@@ -16,6 +20,8 @@ Parameters:
 Tested:
 
 Sample Usage:
+
+    include 'mxtoolkit::linux::secure::login'
 
 #######################################################################
 
@@ -37,8 +43,6 @@ limitations under the License.
 */
 
 class mxtoolkit::linux::secure::login inherits mxtoolkit::linux::secure::params {
-	info("Applying class mxtoolkit::linux::secure::login")
-
 	$type = $mxtoolkit::linux::secure::params::os_type
 
 	if ($::id == "root") {
@@ -47,7 +51,7 @@ class mxtoolkit::linux::secure::login inherits mxtoolkit::linux::secure::params 
 			owner => root,
 			group => root,
 			mode => 644,
-			source => "puppet:///modules/mxtoolkit/secure/login.defs.${type}",
+			source => "puppet:///modules/mxtoolkit/linux/secure/login.defs.${type}",
 			backup => ".mxToolKit_$::datetime"
 		}
 
@@ -58,7 +62,7 @@ class mxtoolkit::linux::secure::login inherits mxtoolkit::linux::secure::params 
 					owner => root,
 					group => root,
 					mode => 644,
-					source => "puppet:///modules/mxtoolkit/secure/system-auth.${type}",
+					source => "puppet:///modules/mxtoolkit/linux/secure/system-auth.${type}",
 					backup => ".mxToolKit_$::datetime"
 				}
 
@@ -67,7 +71,7 @@ class mxtoolkit::linux::secure::login inherits mxtoolkit::linux::secure::params 
 					owner => root,
 					group => root,
 					mode => 644,
-					source => "puppet:///modules/mxtoolkit/secure/libuser.conf.${type}",
+					source => "puppet:///modules/mxtoolkit/linux/secure/libuser.conf.${type}",
 					backup => ".mxToolKit_$::datetime"
 				}
 			}
