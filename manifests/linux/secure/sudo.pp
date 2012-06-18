@@ -54,7 +54,7 @@ class mxtoolkit::linux::secure::sudo inherits mxtoolkit::linux::secure::params {
 			owner => root,
 			group => root,
 			mode => 440,
-			source => "puppet:///modules/mxtoolkit/sudoers.${type}",
+			source => "puppet:///modules/mxtoolkit/linux/secure/sudoers.${type}",
 			backup => ".mxToolKit_$::datetime",
 			require => Package['sudo']
 		}

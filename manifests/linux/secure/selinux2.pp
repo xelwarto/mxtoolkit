@@ -46,7 +46,7 @@ class mxtoolkit::linux::secure::selinux2 inherits mxtoolkit::linux::secure::para
                                         owner => root,
                                         group => root,
                                         mode => 644,
-                                        source => "puppet:///modules/mxtoolkit/secure/selinux.config",
+                                        source => "puppet:///modules/mxtoolkit/linux/secure/selinux.config",
                                         backup => ".mxToolKit_$::datetime"
                                 }
                         }

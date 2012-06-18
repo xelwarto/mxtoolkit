@@ -38,8 +38,6 @@ limitations under the License.
 */
 
 class mxtoolkit::linux::secure::tcpwrapper($allow="") inherits mxtoolkit::linux::secure::params {
-	info("Applying class mxtoolkit::linux::secure::tcpwrapper")
-
 	if ($allow) {
 		$services = $allow
 	} else {
@@ -52,7 +50,7 @@ class mxtoolkit::linux::secure::tcpwrapper($allow="") inherits mxtoolkit::linux:
 			owner => root,
 			group => root,
 			mode => 444,
-			content => template("mxtoolkit/secure/hosts.allow.erb"),
+			content => template("mxtoolkit/linux/secure/hosts.allow.erb"),
 			backup => ".mxToolKit_$::datetime"
 		}
 
@@ -61,9 +59,11 @@ class mxtoolkit::linux::secure::tcpwrapper($allow="") inherits mxtoolkit::linux:
 			owner => root,
 			group => root,
 			mode => 444,
-			source => "puppet:///modules/mxtoolkit/hosts.deny",
+			source => "puppet:///modules/mxtoolkit/linux/secure/hosts.deny",
 			backup => ".mxToolKit_$::datetime",
-			require => File["/etc/hosts.allow"]
+			require => [
+				File["/etc/hosts.allow"]
+			]
 		}
 	} else {
 		err("Error: incorrect user id - must be root to apply")

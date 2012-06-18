@@ -70,7 +70,7 @@ class mxtoolkit::linux::secure::ssh inherits mxtoolkit::linux::secure::params {
 			owner => root,
 			group => root,
 			mode => 444,
-			source => "puppet:///modules/mxtoolkit/secure/sshd_config.${type}",
+			source => "puppet:///modules/mxtoolkit/linux/secure/sshd_config.${type}",
 			backup => ".mxToolKit_$::datetime",
 			require => [
 				Package[$package]

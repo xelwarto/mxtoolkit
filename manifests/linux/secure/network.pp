@@ -38,8 +38,6 @@ limitations under the License.
 */
 
 class mxtoolkit::linux::secure::network inherits mxtoolkit::linux::secure::params {
-	info("Applying class mxtoolkit::linux::secure::network")
-
 	if ($::fqdn) {
 		$net_host = $::fqdn
 	} else {
@@ -54,7 +52,7 @@ class mxtoolkit::linux::secure::network inherits mxtoolkit::linux::secure::param
 					owner => root,
 					group => root,
 					mode => 444,
-					source => "puppet:///modules/mxtoolkit/10-network-security.conf",
+					source => "puppet:///modules/mxtoolkit/linux/secure/10-network-security.conf",
 					backup => ".mxToolKit_$::datetime"
 				}
 			}
@@ -64,7 +62,7 @@ class mxtoolkit::linux::secure::network inherits mxtoolkit::linux::secure::param
                                         owner => root,
                                         group => root,
                                         mode => 644,
-                                        source => "puppet:///modules/mxtoolkit/secure/secure-network.conf",
+                                        source => "puppet:///modules/mxtoolkit/linux/secure/secure-network.conf",
                                         backup => ".mxToolKit_$::datetime"
                                 }
 
@@ -73,7 +71,7 @@ class mxtoolkit::linux::secure::network inherits mxtoolkit::linux::secure::param
                                         owner => root,
                                         group => root,
                                         mode => 644,
-                                        source => "puppet:///modules/mxtoolkit/secure/sysctl.conf.redhat",
+                                        source => "puppet:///modules/mxtoolkit/linux/secure/sysctl.conf.redhat",
                                         backup => ".mxToolKit_$::datetime"
                                 }
 
@@ -88,7 +86,7 @@ class mxtoolkit::linux::secure::network inherits mxtoolkit::linux::secure::param
                                         owner => root,
                                         group => root,
                                         mode => 644,
-					content => template("mxtoolkit/secure/network.redhat.erb"),
+					content => template("mxtoolkit/linux/secure/network.redhat.erb"),
                                         backup => ".mxToolKit_$::datetime"
 				}
 			}
